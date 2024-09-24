@@ -7,6 +7,7 @@ const userRoute = require('./routes/userRoutes')
 const feedbackRoute = require('./routes/feedbackRoutes');
 
 const app = express();
+const PORT = process.env.PORT || 3000
 
 app.use(express.json());
 
@@ -28,6 +29,6 @@ mongoose.connect(process.env.DATABASE_URL)
     .then(() => console.log("DB connected successfully"))
     .catch((err) => console.log("Failed to connect database ", err))
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("server is running.. 3000")
 })
